@@ -26,7 +26,7 @@
   Artifact Registry Administrator (roles/artifactregistry.admin) on the Container Registry project.
   Storage Admin (roles/storage.admin) on the Container Registry project.
 
-**Note: It was partially migrate the image. I need to migrate the complete repo so i have to use the other command for this**   
+**Note: The command was partially migrated the image. I need to migrate the complete repo so i have to use the other command for this**   
 
 ## Migrate to standard Artifact Registry repositories (It works)
 
