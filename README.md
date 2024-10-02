@@ -60,6 +60,7 @@
     If you encounter errors or timeouts, you can safely re-run the command, and completed steps are skipped.
 
     Workable command:
+    ----------------
 
      gcloud artifacts docker upgrade migrate \
      --from-gcr=gcr.io/world-learning-400909 \
