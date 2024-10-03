@@ -64,5 +64,5 @@
 
      gcloud artifacts docker upgrade migrate \
      --from-gcr=gcr.io/world-learning-400909 \
-     --to-pkg-dev=world-learning-400909/gcr-io
+     --to-pkg-dev=world-learning-400909/gcr.io
     
