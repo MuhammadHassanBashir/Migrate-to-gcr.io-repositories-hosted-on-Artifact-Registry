@@ -1,6 +1,6 @@
 # Migrate-to-gcr.io-repositories-hosted-on-Artifact-Registry
 
-## It will migrate the whole GCP GCR repo named gcr.io to GCP Artifacts having same name.
+## It will migrate the whole GCP GCR repo named gcr.io to GCP Artifacts having same name(it works moving same repo from GCR to Artifacts)
   
   gcloud artifacts docker upgrade migrate \
         --projects=PROJECTS
@@ -26,15 +26,15 @@
   Artifact Registry Administrator (roles/artifactregistry.admin) on the Container Registry project.
   Storage Admin (roles/storage.admin) on the Container Registry project.
 
-**Note: The command was partially migrated the image. I need to migrate the complete repo so i have to use the other command for this**   
+**Note: it works on moving same repo from GCR name gcr.io to artifact name gcr.io**   
 
-## Migrate to standard Artifact Registry repositories (It works)
+## Migrate to standard Artifact Registry repositories (It works for differnet repo name like from GCR gcr.io to Artifact gcr-io.. both are differnt)
 
    It will first create the given repo to the GCP artifacts, like in my case i need to migrate gcr.io repo from GCP GCR to GCP Artifact, so i have given gcr.io in the below command, so it creates the repo first in the GCP artifact and then copy the all images from GCP GCR gcr.io repo to newly created GCP Artifacts gcr.io.
 
     gcloud artifacts docker upgrade migrate \
     --from-gcr=GCR_HOSTNAME/GCR_PROJECT \         ---> GCP GCR repo name that need to migrate(in my case repo name is gcr.io)/project id
-    --to-pkg-dev=AR_PROJECT/AR_REPOSITORY         ---> artifact project id where repo need to migrate/artifact repo name(in my case is gcr.io)
+    --to-pkg-dev=AR_PROJECT/AR_REPOSITORY         ---> artifact project id where repo need to migrate/artifact repo name(in my case is gcr-io)
     
     Replace the following:
     
@@ -64,5 +64,5 @@
 
      gcloud artifacts docker upgrade migrate \
      --from-gcr=gcr.io/world-learning-400909 \
-     --to-pkg-dev=world-learning-400909/gcr.io
+     --to-pkg-dev=world-learning-400909/gcr-io
     
