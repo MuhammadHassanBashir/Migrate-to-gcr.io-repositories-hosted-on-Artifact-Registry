@@ -1,6 +1,6 @@
 # Migrate-to-gcr.io-repositories-hosted-on-Artifact-Registry
 
-## It will migrate the whole GCP GCR repo named gcr.io to GCP Artifacts having same name(it works moving same repo from GCR to Artifacts)
+## It will migrate the whole GCP GCR repo named gcr.io to GCP Artifacts having same name(it works moving same repo from GCR to Artifacts named gcr.io)
   
   gcloud artifacts docker upgrade migrate \
         --projects=PROJECTS
