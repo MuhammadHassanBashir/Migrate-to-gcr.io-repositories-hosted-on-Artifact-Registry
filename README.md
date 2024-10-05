@@ -28,7 +28,7 @@
 
 **Note: it works on moving same repo from GCR name gcr.io to artifact name gcr.io**
 
-You could be the thing like...
+You could see the thing like...
 
     gcloud artifacts docker upgrade migrate --projects=world-learning-400909           --------> applying migration command
     Please enter the correct Google Cloud Project ID: world-learning-400909
