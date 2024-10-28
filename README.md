@@ -7,6 +7,26 @@
 
   you need to have owner role on your gcp account for successfully completing this. Because it requires some permission on service account as well as gcp account. For having owner role on gcp account you can easily complete this task..
 
+## Faced organizatoin level issue while working on rajat project.
+
+  gcloud artifacts docker upgrade migrate \
+        --projects=PROJECTS               ----> again it needs and **owner permission** for successfully migrating repos, images and also send IAM policy to send traffic to **artifact registry**.
+
+  I was using the same command on rajat project but it was gaving some kind of organization level restriction. I held meeting with rajat on this issue. rajat used the same command. he was also facing same issue, he just use the option (3).. details is available below.. (Do not change permissions for this repo (users may lose access to gcr.io/rajat-demo-354311)) and everything works fine. it create repos, copy images on repos and set policy to send new image traffic to artifact-registry.   summery we can use 3 options as well when facing any organziation level restriction or other restriction.
+
+    This IAM policy will grant users the ability to perform all actions in Artifact Registry that they can currently perform in Container 
+    Registry. This policy may allow access that was previously prevented by deny policies or IAM conditions.
+
+    Warning: Generated bindings for rajat-demo-354311/gcr.io may be insufficient because you do not have access to analyze IAM for 
+    the following resources: ['organizations/1076394572697']
+    See https://cloud.google.com/policy-intelligence/docs/analyze-iam-policies#required-permissions
+    
+     [1] Apply above policy to the rajat-demo-354311/gcr.io Artifact Registry repository
+     [2] Edit policy
+     [3] Do not change permissions for this repo (users may lose access to gcr.io/rajat-demo-354311)
+     [4] Skip permission updates for all remaining repos (users may lose access to all remaining repos)
+     [5] Exit
+
 
 ## IAM role require if you donot have owner role 
 
