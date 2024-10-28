@@ -2,15 +2,13 @@
 
 ## It will migrate the whole GCP GCR repo named gcr.io to GCP Artifacts having same name(it works moving same repo from GCR to Artifacts named gcr.io)
   
-  gcloud artifacts docker upgrade migrate \
-        --projects=PROJECTS
+  **gcloud artifacts docker upgrade migrate --projects=PROJECTS**
 
   you need to have owner role on your gcp account for successfully completing this. Because it requires some permission on service account as well as gcp account. For having owner role on gcp account you can easily complete this task..
 
 ## Faced organizatoin level issue while working on rajat project.
 
-  gcloud artifacts docker upgrade migrate \
-        --projects=PROJECTS               ----> again it needs and **owner permission** for successfully migrating repos, images and also send IAM policy to send traffic to **artifact registry**.
+  **gcloud artifacts docker upgrade migrate --projects=PROJECTS**               ----> again it needs and **owner permission** for successfully migrating repos, images and also send IAM policy to send traffic to **artifact registry**.
 
   I was using the same command on rajat project but it was gaving some kind of organization level restriction. I held meeting with rajat on this issue. rajat used the same command. he was also facing same issue, he just use the option (3).. details is available below.. (Do not change permissions for this repo (users may lose access to gcr.io/rajat-demo-354311)) and everything works fine. it create repos, copy images on repos and set policy to send new image traffic to artifact-registry.   summery we can use 3 options as well when facing any organziation level restriction or other restriction.
 
